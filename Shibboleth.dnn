@@ -1,0 +1,205 @@
+<dotnetnuke type="Package" version="5.0">
+  <packages>
+    <package name="Shibboleth_Authentication" type="Auth_System" version="01.00.06">
+      <friendlyname>UF DNN Shibboleth Authentication Project</friendlyname>
+      <description>The UF DNN Authentication Project is an Authentication provider for Shibboleth.</description>
+      <owner>
+        <name>UF Office of Research</name>
+        <organization>University of Florida</organization>
+        <url>http://www.research.ufl.edu/</url>
+        <email>cbearden@ufl.edu</email>
+      </owner>
+
+      <dependencies>
+        <dependency type="CoreVersion">05.05.01</dependency>
+      </dependencies>
+
+      <components>
+
+        <component type="Script">
+          <scripts>
+            <basePath>DesktopModules\AuthenticationServices\Shibboleth</basePath>
+            <script type="Install">
+              <name>01.00.06.SqlDataProvider</name>
+              <version>01.00.06</version>
+            </script>
+            <script type="UnInstall">
+              <name>Uninstall.SqlDataProvider</name>
+              <version>01.00.06</version>
+            </script>
+          </scripts>
+        </component>
+
+        <component type="Assembly">
+          <assemblies>
+            <basePath>bin</basePath>
+            <assembly>
+              <name>UF.Research.Authentication.Shibboleth.dll</name>
+            </assembly>
+          </assemblies>
+        </component>
+
+        <component type="AuthenticationSystem">
+          <authenticationService>
+            <type>Shibboleth</type>
+            <settingsControlSrc>DesktopModules/AuthenticationServices/Shibboleth/Settings.ascx</settingsControlSrc>
+            <loginControlSrc>DesktopModules/AuthenticationServices/Shibboleth/Login.ascx</loginControlSrc>
+            <logoffControlSrc/>
+          </authenticationService>
+        </component>
+
+        <component type="Module">
+          <desktopModule>
+            <moduleName>Shibboleth</moduleName>
+            <foldername>AuthenticationServices/Shibboleth</foldername>
+            <moduleDefinitions>
+              <moduleDefinition>
+                <friendlyName>Shibboleth</friendlyName>
+                <defaultCacheTime>0</defaultCacheTime>
+                <moduleControls>
+                  <moduleControl>
+                    <controlKey>Settings</controlKey>
+                    <controlSrc>DesktopModules/AuthenticationServices/Shibboleth/Settings.ascx</controlSrc>
+                    <supportsPartialRendering>False</supportsPartialRendering>
+                    <controlTitle />
+                    <controlType>Edit</controlType>
+                    <iconFile />
+                    <helpUrl />
+                  </moduleControl>
+                  <moduleControl>
+                    <controlKey />
+                    <controlSrc>DesktopModules/AuthenticationServices/Shibboleth/ViewRoleMappings.ascx</controlSrc>
+                    <supportsPartialRendering>False</supportsPartialRendering>
+                    <controlTitle />
+                    <controlType>View</controlType>
+                    <iconFile />
+                    <helpUrl />
+                  </moduleControl>
+                  <moduleControl>
+                    <controlKey>Edit</controlKey>
+                    <controlSrc>DesktopModules/AuthenticationServices/Shibboleth/hvDetail.ascx</controlSrc>
+                    <supportsPartialRendering>False</supportsPartialRendering>
+                    <controlTitle />
+                    <controlType>Edit</controlType>
+                    <iconFile />
+                    <helpUrl />
+                  </moduleControl>
+                </moduleControls>
+              </moduleDefinition>
+            </moduleDefinitions>
+          </desktopModule>
+        </component>
+
+        <component type="File">
+          <files>
+            <basePath>DesktopModules/AuthenticationServices/Shibboleth</basePath>
+            <file>
+              <path>Login</path>
+              <name>ShibHandler.ashx</name>
+            </file>
+            <file>
+              <path>Login</path>
+              <name>ShibHandler.ashx.vb</name>
+            </file>
+            <file>
+              <path></path>
+              <name>ShibbolethLogin.vb</name>
+            </file>
+            <file>
+              <path>HttpModule</path>
+              <name>AuthenticationModule.vb</name>
+            </file>
+            <file>
+              <path>App_LocalResources</path>
+              <name>Settings.ascx.resx</name>
+            </file>
+            <file>
+              <path>App_LocalResources</path>
+              <name>EditFormControl.ascx.resx</name>
+            </file>
+            <file>
+              <path>App_LocalResources</path>
+              <name>ViewRoleMappings.ascx.resx</name>
+            </file>
+            <file>
+              <path>App_LocalResources</path>
+              <name>Login.ascx.resx</name>
+            </file>
+            <file>
+              <name>Settings.ascx</name>
+            </file>
+            <file>
+              <name>Settings.ascx.designer.vb</name>
+            </file>
+            <file>
+              <name>Settings.ascx.vb</name>
+            </file>
+            <file>
+              <name>ViewRoleMappings.ascx</name>
+            </file>
+            <file>
+              <name>Login.ascx</name>
+            </file>
+            <file>
+              <name>rmDetail.ascx</name>
+            </file>
+            <file>
+              <name>uaDetail.ascx</name>
+            </file>
+            <file>
+              <name>hvDetail.ascx</name>
+            </file>
+            <file>
+              <name>Shibboleth.css</name>
+            </file>
+            <file>
+              <name>TestCase.txt</name>
+            </file>
+            <file>
+              <name>TestCaseWarrenResearch.txt</name>
+            </file>
+          </files>
+        </component>
+
+        <component type="Config">
+          <config>
+            <configFile>web.config</configFile>
+            <install>
+              <configuration>
+                <nodes>
+                  <node path="/configuration/system.web/httpModules" action="update" key="name" collision="save">
+                    <add name="Authentication" type="UF.Research.Authentication.Shibboleth.HttpModules.AuthenticationModule, UF.Research.Authentication.Shibboleth" />
+                  </node>
+                  <node path="/configuration/system.web/httpHandlers" action="update" key="name" collision="save">
+                    <add verb="*" path="*InvokeShibHandler.ashx" type="UF.Research.Authentication.Shibboleth.ShibHandler, UF.Research.Authentication.Shibboleth" />
+                  </node>
+                  <node path="/configuration/system.webServer/modules" action="update" key="name" collision="save">
+                    <add name="Authentication" type="UF.Research.Authentication.Shibboleth.HttpModules.AuthenticationModule, UF.Research.Authentication.Shibboleth" preCondition="managedHandler" />
+                  </node>
+                  <node path="/configuration/system.webServer/handlers" action="update" key="name" collision="save">
+                    <add name="Authentication" verb="*" path="*InvokeShibHandler.ashx" type="UF.Research.Authentication.Shibboleth.ShibHandler, UF.Research.Authentication.Shibboleth" preCondition="integratedMode" />
+                  </node>
+                </nodes>
+              </configuration>
+            </install>
+            <uninstall>
+              <configuration>
+                <nodes>
+                  <node path="/configuration/system.web/httpModules" action="update" key="name" collision="overwrite">
+                    <add name="UrlRewrite" type="DotNetNuke.HttpModules.UrlRewriteModule, DotNetNuke.HttpModules" />
+                  </node>
+                  <node path="/configuration/system.webServer/modules" action="update" key="name" collision="overwrite">
+                    <add name="UrlRewrite" type="DotNetNuke.HttpModules.UrlRewriteModule, DotNetNuke.HttpModules" preCondition="managedHandler" />
+                  </node>
+                  <node path="/configuration/dotnetuke/friendlyUrl/providers/@name='SteadyRain.M4'" action="remove" />
+                  <node path="/configuration/dotnetnuke/friendlyUrl" action="updateattribute" name="defaultProvider" value="DNNFriendlyUrl" collision="overwrite" />
+                </nodes>
+              </configuration>
+            </uninstall>
+          </config>
+        </component>
+
+      </components>
+    </package>
+  </packages>
+</dotnetnuke>

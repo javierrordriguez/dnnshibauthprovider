@@ -1,0 +1,38 @@
+﻿/************************************************************/
+/*****              SqlDataProvider                     *****/
+/*****                                                  *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+
+/** Delete Shibboleth Configuration Values But Save Them First!**/
+
+If Exists 
+(Select * from dbo.sysobjects
+ where id = object_id(N'{databaseOwner}[{objectQualifier}PortalSettingsSave]') 
+AND OBJECTPROPERTY(id, N'IsUserTable') = 1)
+Begin
+DROP Table {databaseOwner}[{objectQualifier}PortalSettingsSave]
+End
+Go
+
+If Exists 
+(Select * from dbo.sysobjects
+ where id = object_id(N'{databaseOwner}[{objectQualifier}PortalSettings]') 
+AND OBJECTPROPERTY(id, N'IsUserTable') = 1)
+Begin
+  Select * Into {databaseOwner}{objectQualifier}PortalSettingsSave From {databaseOwner}{objectQualifier}PortalSettings
+  Delete {databaseOwner}[{objectQualifier}PortalSettings] where Left(SettingName,5) = 'SHIB_'
+End
+Go
+
+ 
+
+
+
+
+

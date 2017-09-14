@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="UF.Research.Authentication.Shibboleth.ProjectSettings" Collapsed="true">
+    <Position X="3" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Components\Common\ProjectSettings.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UF.Research.Authentication.Shibboleth.ShibConfiguration" Collapsed="true">
+    <Position X="8.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>JQIAECAEigAQAiIJIEIACBAAAAAQILEgQgAAAAQEAEA=</HashCode>
+      <FileName>Components\Config\ShibConfiguration.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UF.Research.Authentication.Shibboleth.GroupController" Collapsed="true">
+    <Position X="4.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAA=</HashCode>
+      <FileName>Components\Groups\GroupController.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UF.Research.Authentication.Shibboleth.GroupInfo" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAICAAAAAAAAAAAAAgABIQAAIAAAACACBAACAAAAAg=</HashCode>
+      <FileName>Components\Groups\GroupInfo.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="UF.Research.Authentication.Shibboleth.ShibAuthController" Collapsed="true">
+    <Position X="6.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAQAAAAAAAEAAaAAEQAAAAAQgEAAAEABCAAA=</HashCode>
+      <FileName>Components\ShibAuthController.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UF.Research.Authentication.Shibboleth.ShibAuthenticationProvider" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAEUAAAAAAAAAA=</HashCode>
+      <FileName>Components\ShibAuthenticationProvider.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UF.Research.Authentication.Shibboleth.ShibUserController" Collapsed="true">
+    <Position X="4.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAQBAAAAAAAAACAAAQAAgEAAAAAAAAAA=</HashCode>
+      <FileName>Components\Users\ShibUserController.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UF.Research.Authentication.Shibboleth.ShibUserInfo" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAADAAAAwAAABAQAEAAAAAGAAAAAAAAAAgA=</HashCode>
+      <FileName>Components\Users\ShibUserInfo.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="UF.Research.Authentication.Shibboleth.ShibHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="3" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAMAAABgArCpoAgBAQDAAAECgAIACABYDAAgAAEAA=</HashCode>
+      <FileName>Login\ShibHandler.ashx.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="UF.Research.Authentication.Shibboleth.Login" Collapsed="true">
+    <Position X="8.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAoAAABAAAAAAAAAAAAABAAAAAAIAAAA=</HashCode>
+      <FileName>Login.ascx.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UF.Research.Authentication.Shibboleth.Settings" Collapsed="true">
+    <Position X="4.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAgAAAAAEAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Settings.ascx.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UF.Research.Authentication.Shibboleth.HttpModules.AuthenticationModule" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQCAAAAkAAAAAAACCAAAAAAACACACAAAAAAA=</HashCode>
+      <FileName>HttpModule\AuthenticationModule.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="UF.Research.Authentication.Shibboleth.SHIB.ShibProvider" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAGAAAAAIAAAAAAAAAAEEAAAAAAAAAA=</HashCode>
+      <FileName>Providers\ShibProvider\ShibProvider.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UF.Research.Authentication.Shibboleth.SHIB.Utilities" Collapsed="true">
+    <Position X="8.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAASAAABAAAAAAAAAAAEEAAAAgAAAEAIAAAAAAAA=</HashCode>
+      <FileName>Providers\ShibProvider\Utilities.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="UF.Research.Authentication.Shibboleth.IAuthenticationObjectBase" Collapsed="true">
+    <Position X="3" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Components\IAuthenticationObjectBase.vb</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="UF.Research.Authentication.Shibboleth.AuthenticationStatus" Collapsed="true">
+    <Position X="3" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAIAAACA=</HashCode>
+      <FileName>Components\Common\AuthenticationStatus.vb</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="UF.Research.Authentication.Shibboleth.ObjectClass" Collapsed="true">
+    <Position X="4.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAAAAAgAEAhAAAAAAAAAAACAAQE=</HashCode>
+      <FileName>Components\Common\ObjectClass.vb</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>
